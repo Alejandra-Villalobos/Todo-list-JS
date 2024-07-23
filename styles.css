@@ -1,0 +1,131 @@
+body {
+  font-family: Arial, sans-serif;
+  background: rgb(255, 164, 68);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 164, 68, 1) 0%,
+    rgba(244, 1, 191, 1) 100%
+  );
+  background-attachment: fixed;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#input {
+  width: 90%;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+}
+
+#submit {
+  width: 10%;
+  padding: 8px;
+  font-size: large;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1b7cf2;
+  color: white;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #0f4f8f;
+}
+
+#list-container {
+  width: 50%;
+  margin-top: 20px;
+  background-color: white;
+  padding: 10px;
+
+  /* Glassmorphism */
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.deleted-task {
+  animation: fall 1s ease-in-out forwards;
+}
+
+.task-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.done-button {
+  padding: 10px;
+  border-radius: 15%;
+  border: none;
+  background-color: #04de3e;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.done-button:hover {
+  background-color: #00c72e;
+}
+
+.delete-button {
+  padding: 10px;
+  border-radius: 15%;
+  border: none;
+  background-color: #fa0707;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c70000;
+}
+
+.done {
+  text-decoration: line-through;
+  font-style: italic;
+  color: #949292;
+}
+
+.no-tasks-message {
+  text-align: center;
+  font-style: italic;
+}
