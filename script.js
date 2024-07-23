@@ -7,6 +7,11 @@ let tasks = localStorage.getItem("tasks")
   ? JSON.parse(localStorage.getItem("tasks"))
   : [];
 
+//Save or update tasks in local storage
+function saveTasks(task) {
+  localStorage.setItem("tasks", JSON.stringify(task));
+}
+
 //Render task list with done and delete buttons
 function renderTasks() {
   //If there are no tasks, display a message
@@ -53,7 +58,7 @@ function renderTasks() {
 //Toggle status of task
 function toggleDone(index) {
   tasks[index].done = !tasks[index].done;
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+  saveTasks(tasks);
   renderTasks();
 }
 
@@ -68,7 +73,7 @@ function deleteTask(index) {
   //Remove task from list after animation
   setTimeout(() => {
     tasks.splice(index, 1);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    saveTasks(tasks);
     renderTasks();
   }, 1000);
 }
@@ -79,7 +84,7 @@ submit.addEventListener("click", (e) => {
   const value = input.value;
   if (!value) return;
   tasks.push({ value, done: false });
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+  saveTasks(tasks);
   input.value = "";
   renderTasks();
 });
