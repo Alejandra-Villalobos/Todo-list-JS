@@ -42,6 +42,7 @@ function renderTasks() {
 
     taskItem.appendChild(taskText);
     taskItem.appendChild(buttonsContainer);
+
     buttonsContainer.appendChild(doneButton);
     buttonsContainer.appendChild(deleteButton);
 
@@ -58,16 +59,18 @@ function toggleDone(index) {
 
 //Delete tasks
 function deleteTask(index) {
+  //Add class to animate deletion
   const taskItems = document.querySelectorAll(".task-container");
   const taskItem = taskItems[index];
 
   taskItem.classList.add("deleted-task");
 
+  //Remove task from list after animation
   setTimeout(() => {
     tasks.splice(index, 1);
     localStorage.setItem("tasks", JSON.stringify(tasks));
     renderTasks();
-  }, 1000); // Duration of the animation
+  }, 1000);
 }
 
 // Add new task
