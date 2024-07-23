@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo list</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+    <!--CSS-->
+    <link rel="stylesheet" href="styles.css" />
+    <!--Font Awesome Icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div id="container">
-        <h1>Todo list</h1>
-        <form>
-            <input type="text" id="input" placeholder="Enter your task">
-            <button type="submit" id="submit"><i class="fas fa-plus"></i></button>
-        </form>
-        <div id="list-container"></div>
+      <h1 id="title">Todo list</h1>
+      <form>
+        <input type="text" id="input" placeholder="Enter your task" />
+        <button type="submit" id="submit"><i class="fas fa-plus"></i></button>
+      </form>
+      <div id="list-container"></div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
